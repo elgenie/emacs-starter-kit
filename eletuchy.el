@@ -34,5 +34,5 @@
   (normal-top-level-add-subdirs-to-load-path))
 
 (require 'yas-jit)
-(setq yas/root-directory (concat user-specific-dir "/snippets"))
+(setq yas/root-directory (concat dotfiles-dir "/snippets"))
 (yas/jit-load)
