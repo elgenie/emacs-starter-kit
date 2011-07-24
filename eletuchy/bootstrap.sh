@@ -4,3 +4,5 @@
 # 1/ not forked in github
 # 2/ not available via the package archives
 git svn clone --stdlayout --revision 665 http://yasnippet.googlecode.com/svn/ yasnippet
+
+wget https://raw.github.com/stsquad/emacs_chrome/master/servers/edit-server.el
