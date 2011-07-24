@@ -14,4 +14,4 @@
   )
 (add-hook 'coding-hook 'turn-on-line-numbers)
 
-
+(add-hook 'coding-hook 'yas/minor-mode)

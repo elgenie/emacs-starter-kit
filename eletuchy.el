@@ -27,3 +27,9 @@
 (setq require-final-newline 'visit-save
       next-line-add-newlines nil)
 
+(let ((default-directory user-specific-dir))
+  (normal-top-level-add-subdirs-to-load-path))
+
+(require 'yas-jit)
+(setq yas/root-directory (concat user-specific-dir "/snippets"))
+(yas/jit-load)
