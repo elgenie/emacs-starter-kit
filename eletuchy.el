@@ -36,3 +36,19 @@
 (require 'yas-jit)
 (setq yas/root-directory (concat dotfiles-dir "/snippets"))
 (yas/jit-load)
+
+;; --------------------------------------------------------------------------------
+;; Make modifier+arrow-key work inside ttys
+;; (when (member (getenv "TERM") '("linux" "xterm" "screen"))) ;; another option
+(when (not window-system)
+  (dolist (prefix '("\eO" "\eO1;" "\e[1;"))
+    (dolist (m '(("2" . "S-") ("3" . "M-") ("4" . "S-M-") ("5" . "C-")
+                 ("6" . "S-C-") ("7" . "C-M-") ("8" . "S-C-M-")))
+      (dolist (k '(("A" . "<up>") ("B" . "<down>") ("C" . "<right>")
+                   ("D" . "<left>") ("H" . "<home>") ("F" . "<end>")))
+        (define-key function-key-map
+          (concat prefix (car m) (car k))
+          (read-kbd-macro (concat (cdr m) (cdr k)))))
+      )
+    ))
+
