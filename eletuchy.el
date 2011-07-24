@@ -1,6 +1,9 @@
 ;; The emacs-starter-kit defaults are generally pretty good
 ;; (for the languages it knows about). Here are some deviations:
 
+;; typing overwrites selected text (pending delete)
+(delete-selection-mode t)
+
 ;; Interactive Do (http://www.emacswiki.org/cgi-bin/wiki/InteractivelyDoThings)
 (setq ido-max-prospects 30 ;; show 30 prospective matches
       ido-ignore-extensions t)
